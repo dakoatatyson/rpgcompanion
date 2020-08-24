@@ -10,8 +10,8 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
-  title = "example@example.com";
-  
+  user = this.userService.user;
+
   constructor(private userService: UserService, private modalController: ModalController) {
     if(userService.user === null){
       this.presentModal(); 
@@ -19,6 +19,10 @@ export class ProfilePage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  async update(){
+    
   }
 
   async presentModal() {

@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title class="ion-text-center">{{title}}</ion-title>
+    <ion-title class="ion-text-center"><div *ngIf='user !== null'>{{user.email}}</div></ion-title>
   </ion-toolbar>
 </ion-header>
 
