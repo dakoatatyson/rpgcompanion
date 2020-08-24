@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="logForm(form)" #form="ngForm" style="margin-top: 100px;">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <ion-list lines="full">
+            <ion-item>
+              <ion-label color="primary" position="floating">Email</ion-label>
+              <ion-input type="email" name="email" [(ngModel)]="user.email" pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" placeholder="example@example.com" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label color="primary" position="floating">Password</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="user.password" pattern="^([a-zA-Z0-9@*#]{8,15})$" required></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6"><ion-button (click)="presentModal()" expand="block">Registor</ion-button></ion-col>
+        <ion-col size="6"><ion-button type="submit" expand="block" [disabled]="!form.valid">Login</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>
